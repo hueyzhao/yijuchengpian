@@ -1,5 +1,10 @@
 ---
 name: yijuchengpian
+version: "0.3.3"
+display_name: "一句成片"
+display_name_en: "Yiju Chengpian"
+description_zh: "通过对话规划故事与分镜，将本地素材制作成带中文配音、同步字幕和配乐的视频，提供六套创作风格模板。"
+description_en: "Plan stories and shots through conversation, then turn local media into videos with Chinese narration, synchronized subtitles and music. Includes six creative style templates."
 description: 用一句成片本地工具把故事分镜、本地图片或视频及可选录音制作成带中文字幕的 MP4。用于本地短片、故事插画视频和素材剪辑。
 ---
 

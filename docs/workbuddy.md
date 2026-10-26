@@ -37,7 +37,7 @@ bun run demo
 2. WorkBuddy 左侧「专家·技能·连接器」→「技能」→「添加技能」→「上传技能」，选择 ZIP。
 3. 在本地任务中选择一句成片，工作目录建议选安装后的 `workspace`。如果需要读写该目录，按宿主提示授权。
 
-发行包为“yijuchengpian-0.3.2-workbuddy-skill.zip”，根目录含技能，references 下只有参考文件；源码另从仓库获取。上传技能本身不等于发布付费商品。
+发行包为“yijuchengpian-0.3.3-workbuddy-skill.zip”，根目录含技能，references 下只有参考文件；源码另从仓库获取。上传技能本身不等于发布付费商品。
 
 ## 四、第一次使用：先验证，再创作
 

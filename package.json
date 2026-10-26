@@ -1,6 +1,6 @@
 {
   "name": "yijuchengpian",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "一句成片：说出想法，免费制作 AI 视频",
   "private": true,
   "type": "module",

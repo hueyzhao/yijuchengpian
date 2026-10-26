@@ -85,3 +85,7 @@ Windows System.Speech 适配已提供但没有 Windows 真机验证；没有已�
 新增独立 workbuddy-skill 包，仅包含根目录 SKILL.md、schema.md 与 references 下的一层 Markdown 文件。六套模板移至 references/style-*.md，所有引用同步更新。制作工具由宿主按安装指引从仓库获取，不再塞入技能上传包。
 
 打包脚本拒绝超过两个路径分量的文件、符号链接和非 Markdown 文件，验证引用不越界且存在、六套模板齐全、ZIP 完整性。技能结构校验通过。本次确认符合用户提供的层级约束，尚未在 WorkBuddy 上传界面复验，不能等同于端到端安装成功。
+
+## 0.3.3 WorkBuddy 声明字段修复（2026-10-27）
+
+根据 WorkBuddy 实际报错补齐 frontmatter 顶层 version、display_name、display_name_en、description_zh、description_en，保留通用 name 和 description。打包时检查五项非空、无重复、版本格式及与 package.json 一致，并继续校验浅层目录和内部引用。此检查针对已知 WorkBuddy 要求，不代表上传解析已全部通过；待平台实际导入验收。

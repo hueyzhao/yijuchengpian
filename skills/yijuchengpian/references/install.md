@@ -7,9 +7,9 @@
 - 检查宿主是否能读写本地文件和执行本地工具。只有网页聊天或仅能读附件时，说明需要切换到本地任务模式；不要宣称安装成功。
 - 优先复用已安装的一句成片和可用的 yijuchengpian MCP。不要覆盖其他连接器、已有作品或用户设置。
 - WorkBuddy 专用技能包不包含制作工具源码，不能在技能目录寻找或创建 assets/app。先复用用户已安装的工具；若打开的是完整仓库则直接使用仓库根目录。
-- 没有工具源码时，由工作台从 https://github.com/hueyzhao/yijuchengpian 获取源码到用户授权的长期目录。可克隆仓库，或下载固定版本源码 https://github.com/hueyzhao/yijuchengpian/archive/refs/tags/v0.3.2.zip 并解压。源码包只供本地工具安装，不能上传到 WorkBuddy 技能入口。
+- 没有工具源码时，由工作台从 https://github.com/hueyzhao/yijuchengpian 获取源码到用户授权的长期目录。可克隆仓库，或下载固定版本源码 https://github.com/hueyzhao/yijuchengpian/archive/refs/tags/v0.3.3.zip 并解压。源码包只供本地工具安装，不能上传到 WorkBuddy 技能入口。
 - 目标目录建议命名 yijuchengpian，已有目录先检查，不能覆盖用户配置或作品。记录实际安装路径，后续在相同目录运行工具。若工作台没有下载或本地执行权限，说明具体阻塞并引导必要授权，不假装成功。
-- WorkBuddy 上传的是 yijuchengpian-0.3.2-workbuddy-skill.zip，根目录为 SKILL.md、schema.md，references 下只有文件，不再嵌套子目录。只读取相关文件，不扫描用户全部文件。
+- WorkBuddy 上传的是 yijuchengpian-0.3.3-workbuddy-skill.zip，根目录为 SKILL.md、schema.md，references 下只有文件，不再嵌套子目录。只读取相关文件，不扫描用户全部文件。
 
 ## 安装制作工具
 

@@ -31,7 +31,7 @@ export async function doctor() {
   const output = await new Response(child.stdout).text();
   const code = await child.exited;
   if (code !== 0) throw new Error("FFmpeg 不可运行，请重新执行安装");
-  return { product: "一句成片", version: "0.3.2", workspace, ffmpeg: output.split("\n")[0], voiceover: await voiceStatus(), onlineVoiceover: await edgeStatus(), musicPresets: ["gentle", "bright", "calm"], paidApiCalls: 0 };
+  return { product: "一句成片", version: "0.3.3", workspace, ffmpeg: output.split("\n")[0], voiceover: await voiceStatus(), onlineVoiceover: await edgeStatus(), musicPresets: ["gentle", "bright", "calm"], paidApiCalls: 0 };
 }
 
 export async function loadStory(path: string) {

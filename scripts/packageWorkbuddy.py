@@ -9,6 +9,23 @@ import zipfile
 root = Path(__file__).resolve().parent.parent
 skill = root / 'skills/yijuchengpian'
 version = json.loads((root / 'package.json').read_text())['version']
+# WorkBuddy requires additional top-level metadata beyond the generic Skill format.
+header = (skill / 'SKILL.md').read_text(encoding='utf-8').split('---', 2)
+if len(header) != 3 or header[0].strip():
+    raise ValueError('SKILL.md must begin with YAML frontmatter')
+required = ['version', 'display_name', 'display_name_en', 'description_zh', 'description_en']
+metadata = {}
+for field in required:
+    matches = re.findall(r'^' + field + r':\s*(.+)$', header[1], re.MULTILINE)
+    if len(matches) != 1:
+        raise ValueError(f'Missing or duplicate WorkBuddy metadata: {field}')
+    # These fields use JSON-quoted strings, which are valid YAML and avoid ambiguity.
+    value = json.loads(matches[0])
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f'Empty WorkBuddy metadata: {field}')
+    metadata[field] = value
+if metadata['version'] != version or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+    raise ValueError('Skill version must match package.json and use major.minor.patch')
 out = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else root / 'output/releases'
 out.mkdir(parents=True, exist_ok=True)
 files = sorted(p for p in skill.rglob('*') if p.is_file())
@@ -34,4 +51,4 @@ with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
 checksum = hashlib.sha256(archive.read_bytes()).hexdigest()
 (out / f'SHA256SUMS-{version}.txt').write_text(f'{checksum}  {archive.name}\n')
-print(json.dumps({'archive': str(archive), 'files': names, 'maxPathComponents': 2, 'sha256': checksum}, ensure_ascii=False, indent=2))
+print(json.dumps({'archive': str(archive), 'files': names, 'maxPathComponents': 2, 'workbuddyMetadata': metadata, 'sha256': checksum}, ensure_ascii=False, indent=2))
