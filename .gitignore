@@ -1,0 +1,9 @@
+node_modules/
+output/
+workspace/
+local/
+*.log
+.DS_Store
+.env*
+.workbuddy/
+.trae/

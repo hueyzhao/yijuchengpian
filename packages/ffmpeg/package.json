@@ -1,0 +1,13 @@
+{
+  "name": "@yingya/ffmpeg",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/runtime.ts"
+  },
+  "dependencies": {
+    "@yingya/file": "workspace:*",
+    "@renmu/fluent-ffmpeg": "2.3.3"
+  }
+}

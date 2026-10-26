@@ -1,0 +1,30 @@
+{
+  "name": "yingya",
+  "version": "0.3.0",
+  "description": "映芽：说出想法，免费制作 AI 视频",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "start": "bun src/cli.ts",
+    "mcp": "bun src/mcp.ts",
+    "setup": "bun scripts/setup.ts",
+    "demo": "bun scripts/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@yingya/file": "workspace:*",
+    "@yingya/ffmpeg": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.25.1",
+    "ffmpeg-static": "5.2.0",
+    "sharp": "0.34.5",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "@types/node": "^26.6.5",
+    "typescript": "5.9.3"
+  },
+  "trustedDependencies": ["ffmpeg-static", "sharp"]
+}
