@@ -2,7 +2,9 @@
 
 ## 第一步：拿到安装包
 
-下载一句成片技能安装包并解压，里面包含 SKILL.md 和制作工具源码 assets/app。不需要自己编写代码。从 [GitHub 下载页](https://github.com/hueyzhao/yijuchengpian/releases/latest) 获取“一句成片-0.3.1-技能安装包.zip”。
+WorkBuddy 技能入口只上传文件名带 `workbuddy-skill` 的 ZIP。不要上传 GitHub 的 Source code 包或旧版 starter 包，否则可能因目录过深解析失败。
+
+下载一句成片技能安装包并解压，里面包含 SKILL.md 和浅层参考文件，制作工具由工作台从 GitHub 安装。不需要自己编写代码。从 [GitHub 下载页](https://github.com/hueyzhao/yijuchengpian/releases/latest) 获取“yijuchengpian-0.3.2-workbuddy-skill.zip”。
 
 ## 第二步：打开工作台
 

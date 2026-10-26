@@ -1,12 +1,12 @@
 # 工作台接入参考（供 AI 执行）
 
-普通用户请看 [三步使用教程](start.md)。以下为工作台执行安装和连接时的技术参考，不要求用户手动输入命令。完整技能安装包在 [GitHub 下载页](https://github.com/hueyzhao/yijuchengpian/releases/latest)，也可使用仓库源码。
+普通用户请看 [三步使用教程](start.md)。以下为工作台执行安装和连接时的技术参考，不要求用户手动输入命令。WorkBuddy 专用技能包在 [GitHub 下载页](https://github.com/hueyzhao/yijuchengpian/releases/latest)，也可使用仓库源码。
 
 你需要安装两个部分：**本地制作工具**负责渲染，**技能**负责指导 WorkBuddy 的模型。只导入 Skill 不会自动获得渲染能力。
 
 ## 一、下载并安装本地制作工具
 
-1. 使用用户提供的源码包或技能包中的 assets/app，放到固定目录，如 `文稿/yijuchengpian`。不要放在临时目录。
+1. 使用用户提供的源码包或仓库源码，放到固定目录，如 `文稿/yijuchengpian`。不要放在临时目录。
 2. macOS：在终端进入这个目录，执行 `bash install.command`。文件可执行时也可双击；系统拦截时优先采用上述命令，不关闭系统安全保护。
 3. Windows：在此目录打开 PowerShell，运行 `./install.ps1`。如果组织策略禁止执行脚本，按提示联系管理员，或安装 Bun 后手动执行下方三个命令；不要全局关闭执行策略。
 4. 安装需要联网下载 Bun（缺失时）、项目依赖与 FFmpeg，不下载 AI 模型，不要求充值 API。完成后显示工作目录及 `local/mcp.json` 路径。
@@ -37,7 +37,7 @@ bun run demo
 2. WorkBuddy 左侧「专家·技能·连接器」→「技能」→「添加技能」→「上传技能」，选择 ZIP。
 3. 在本地任务中选择一句成片，工作目录建议选安装后的 `workspace`。如果需要读写该目录，按宿主提示授权。
 
-发行包为“一句成片-0.3.1-技能安装包.zip”，根目录含技能，assets/app 含工具源码。上传技能本身不等于发布付费商品。
+发行包为“yijuchengpian-0.3.2-workbuddy-skill.zip”，根目录含技能，references 下只有参考文件；源码另从仓库获取。上传技能本身不等于发布付费商品。
 
 ## 四、第一次使用：先验证，再创作
 

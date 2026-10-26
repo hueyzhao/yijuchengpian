@@ -4,12 +4,12 @@
 
 | 模板 | 适合的目标 | 读取文件 |
 |---|---|---|
-| 治愈绘本 | 温暖、陪伴、成长、亲子故事 | [healing.md](styles/healing.md) |
-| 悬疑故事 | 谜题、异常线索、合理反转 | [mystery.md](styles/mystery.md) |
-| 轻松科普 | 解释一个知识点、日常问题 | [science.md](styles/science.md) |
-| 产品介绍 | 真实使用场景、单品或服务展示 | [product.md](styles/product.md) |
-| 国风故事 | 东方意境、架空古风、传统题材 | [chinese.md](styles/chinese.md) |
-| 搞笑短剧 | 日常误会、行为反差、轻喜剧 | [comedy.md](styles/comedy.md) |
+| 治愈绘本 | 温暖、陪伴、成长、亲子故事 | [healing.md](style-healing.md) |
+| 悬疑故事 | 谜题、异常线索、合理反转 | [mystery.md](style-mystery.md) |
+| 轻松科普 | 解释一个知识点、日常问题 | [science.md](style-science.md) |
+| 产品介绍 | 真实使用场景、单品或服务展示 | [product.md](style-product.md) |
+| 国风故事 | 东方意境、架空古风、传统题材 | [chinese.md](style-chinese.md) |
+| 搞笑短剧 | 日常误会、行为反差、轻喜剧 | [comedy.md](style-comedy.md) |
 
 按需只读一套；混搭时最多先读两套，说明“剧情用哪套、画面用哪套”。这些是开放的创作参考，不限制用户指定的其他风格。
 

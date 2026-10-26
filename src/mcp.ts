@@ -3,7 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { doctor, renderProject, validateProject } from "./maker";
 
-const server = new McpServer({ name: "yijuchengpian", version: "0.3.1" });
+const server = new McpServer({ name: "yijuchengpian", version: "0.3.2" });
 async function result(operation: () => Promise<unknown>) {
   try { return { content: [{ type: "text" as const, text: JSON.stringify(await operation()) }] }; }
   catch (error) { return { isError: true, content: [{ type: "text" as const, text: error instanceof Error ? error.message : String(error) }] }; }
