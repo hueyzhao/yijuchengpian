@@ -2,7 +2,7 @@
 
 ## 第一步：拿到安装包
 
-下载一句成片技能安装包并解压，里面包含 SKILL.md 和制作工具源码 assets/app。不需要自己编写代码。当前交付为本地安装包，尚未发布到新的 GitHub 仓库。
+下载一句成片技能安装包并解压，里面包含 SKILL.md 和制作工具源码 assets/app。不需要自己编写代码。从 [GitHub 下载页](https://github.com/hueyzhao/yijuchengpian/releases/latest) 获取“一句成片-0.3.1-技能安装包.zip”。
 
 ## 第二步：打开工作台
 
