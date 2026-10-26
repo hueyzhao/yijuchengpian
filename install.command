@@ -7,8 +7,8 @@ elif command -v bun >/dev/null 2>&1; then
   bunExecutable="$(command -v bun)"
 else
   echo "正在从 bun.sh 安装运行环境，不下载 AI 模型。"
-  curl --fail --show-error --location https://bun.sh/install -o "${TMPDIR:-/tmp}/yingyaBunInstall.sh"
-  bash "${TMPDIR:-/tmp}/yingyaBunInstall.sh"
+  curl --fail --show-error --location https://bun.sh/install -o "${TMPDIR:-/tmp}/yijuchengpianBunInstall.sh"
+  bash "${TMPDIR:-/tmp}/yijuchengpianBunInstall.sh"
   bunExecutable="$HOME/.bun/bin/bun"
 fi
 export PATH="$(dirname "$bunExecutable"):$PATH"

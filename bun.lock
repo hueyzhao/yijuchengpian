@@ -3,11 +3,11 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "yingya",
+      "name": "yijuchengpian",
       "dependencies": {
         "@modelcontextprotocol/sdk": "1.25.1",
-        "@yingya/ffmpeg": "workspace:*",
-        "@yingya/file": "workspace:*",
+        "@yijuchengpian/ffmpeg": "workspace:*",
+        "@yijuchengpian/file": "workspace:*",
         "ffmpeg-static": "5.2.0",
         "sharp": "0.34.5",
         "zod": "3.25.76",
@@ -19,15 +19,15 @@
       },
     },
     "packages/ffmpeg": {
-      "name": "@yingya/ffmpeg",
+      "name": "@yijuchengpian/ffmpeg",
       "version": "0.1.0",
       "dependencies": {
         "@renmu/fluent-ffmpeg": "2.3.3",
-        "@yingya/file": "workspace:*",
+        "@yijuchengpian/file": "workspace:*",
       },
     },
     "packages/file": {
-      "name": "@yingya/file",
+      "name": "@yijuchengpian/file",
       "version": "0.1.0",
       "dependencies": {
         "async-mutex": "0.5.0",
@@ -104,9 +104,9 @@
 
     "@types/node": ["@types/node@26.6.5", "", { "dependencies": { "undici-types": "~8.9.0" } }, "sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg=="],
 
-    "@yingya/ffmpeg": ["@yingya/ffmpeg@workspace:packages/ffmpeg"],
+    "@yijuchengpian/ffmpeg": ["@yijuchengpian/ffmpeg@workspace:packages/ffmpeg"],
 
-    "@yingya/file": ["@yingya/file@workspace:packages/file"],
+    "@yijuchengpian/file": ["@yijuchengpian/file@workspace:packages/file"],
 
     "accepts": ["accepts@2.0.0", "", { "dependencies": { "mime-types": "^3.0.0", "negotiator": "^1.0.0" } }, "sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng=="],
 

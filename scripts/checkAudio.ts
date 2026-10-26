@@ -11,7 +11,7 @@ const base = { title: "音频校验", duration: 4, characters: [], shots: [{ dur
 assert.throws(() => validateStory({ ...base, audio: "x.wav", voiceover: {} }), /只能选一个/);
 assert.throws(() => validateStory({ ...base, music: { preset: "gentle", asset: "x.wav" } }));
 assert.throws(() => validateStory({ ...base, music: { preset: "gentle", volume: -1 } }));
-const root = await mkdtemp(join(tmpdir(), "yingyaAudioCheck-"));
+const root = await mkdtemp(join(tmpdir(), "yijuchengpianAudioCheck-"));
 let checks = 3;
 try {
   for (const preset of ["gentle", "bright", "calm"] as const) {
@@ -36,7 +36,7 @@ try {
   const longer = { ...base, duration: 6, shots: base.shots.map(shot => ({ ...shot, duration: 6 })) };
   const importedResult = await prepareAudio(validateStory({ ...longer, music: { asset: "short.wav" } }).story, imported, ffmpeg!, async () => join(root, "gentle/music.wav"));
   assert(importedResult.file); checks++;
-  await assert.rejects(requireVoice("yingya_missing_voice_123")); checks++;
+  await assert.rejects(requireVoice("yijuchengpian_missing_voice_123")); checks++;
   if ((await voiceStatus()).available) {
     const syncDir = join(root, "sync"); await mkdir(syncDir);
     const spoken = "你好呀，欢迎回家。";

@@ -1,5 +1,5 @@
-import { createFfmpeg } from "@yingya/ffmpeg";
-import { copyFile, mkdir, readFile, realpath, stat, writeAtomic, writeFile } from "@yingya/file";
+import { createFfmpeg } from "@yijuchengpian/ffmpeg";
+import { copyFile, mkdir, readFile, realpath, stat, writeAtomic, writeFile } from "@yijuchengpian/file";
 import ffmpegPath from "ffmpeg-static";
 import { extname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { randomUUID } from "node:crypto";
@@ -7,7 +7,7 @@ import { validateStory } from "./story";
 import { edgeStatus, requireEdge } from "./edgeVoice";
 import { prepareAudio, requireVoice, voiceStatus } from "./audio";
 
-export const workspace = resolve(process.env.YINGYA_WORKSPACE || "workspace");
+export const workspace = resolve(process.env.YIJUCHENGPIAN_WORKSPACE || "workspace");
 
 export async function localPath(value: string) {
   if (isAbsolute(value) || !value || value.includes(":")) throw new Error("只接受工作目录内的相对路径");
@@ -20,8 +20,8 @@ export async function localPath(value: string) {
 }
 
 function binary() {
-  const path = process.env.YINGYA_FFMPEG || ffmpegPath;
-  if (!path) throw new Error("此平台没有可用 FFmpeg，请设置 YINGYA_FFMPEG");
+  const path = process.env.YIJUCHENGPIAN_FFMPEG || ffmpegPath;
+  if (!path) throw new Error("此平台没有可用 FFmpeg，请设置 YIJUCHENGPIAN_FFMPEG");
   return path;
 }
 
@@ -31,7 +31,7 @@ export async function doctor() {
   const output = await new Response(child.stdout).text();
   const code = await child.exited;
   if (code !== 0) throw new Error("FFmpeg 不可运行，请重新执行安装");
-  return { product: "映芽", version: "0.3.0", workspace, ffmpeg: output.split("\n")[0], voiceover: await voiceStatus(), onlineVoiceover: await edgeStatus(), musicPresets: ["gentle", "bright", "calm"], paidApiCalls: 0 };
+  return { product: "一句成片", version: "0.3.0", workspace, ffmpeg: output.split("\n")[0], voiceover: await voiceStatus(), onlineVoiceover: await edgeStatus(), musicPresets: ["gentle", "bright", "calm"], paidApiCalls: 0 };
 }
 
 export async function loadStory(path: string) {
@@ -77,10 +77,10 @@ export async function renderProject(path: string) {
     const audio = await prepareAudio(story, job, binary(), localPath);
     const ffmpeg = createFfmpeg(job);
     ffmpeg.setFfmpegPath(binary());
-    const fontCandidates = [process.env.YINGYA_FONT, "/System/Library/Fonts/PingFang.ttc", "/System/Library/Fonts/STHeiti Medium.ttc", "/System/Library/Fonts/Supplemental/Songti.ttc", "C:/Windows/Fonts/msyh.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"].filter(Boolean) as string[];
+    const fontCandidates = [process.env.YIJUCHENGPIAN_FONT, "/System/Library/Fonts/PingFang.ttc", "/System/Library/Fonts/STHeiti Medium.ttc", "/System/Library/Fonts/Supplemental/Songti.ttc", "C:/Windows/Fonts/msyh.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"].filter(Boolean) as string[];
     let font: string | undefined;
     for (const candidate of fontCandidates) { try { if ((await stat(candidate)).isFile()) { font = candidate; break; } } catch {} }
-    if (!font) throw new Error("未找到中文字体，请设置 YINGYA_FONT 为本机中文字体路径");
+    if (!font) throw new Error("未找到中文字体，请设置 YIJUCHENGPIAN_FONT 为本机中文字体路径");
     await copyFile(font, join(job, "font.ttc"));
     const subtitles: string[] = [];
     let elapsed = 0;

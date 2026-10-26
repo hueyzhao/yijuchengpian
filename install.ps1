@@ -5,7 +5,7 @@ if (-not (Test-Path $bunExecutable)) {
   $existing = Get-Command bun -ErrorAction SilentlyContinue
   if ($existing) { $bunExecutable = $existing.Source }
   else {
-    $installer = Join-Path $env:TEMP 'yingyaBunInstall.ps1'
+    $installer = Join-Path $env:TEMP 'yijuchengpianBunInstall.ps1'
     Invoke-WebRequest 'https://bun.sh/install.ps1' -OutFile $installer
     & $installer
     if (-not (Test-Path $bunExecutable)) { throw 'Bun 安装未完成，请从 bun.sh 安装后重试。' }

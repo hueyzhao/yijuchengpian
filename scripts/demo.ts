@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { mkdir, writeAtomic } from "@yingya/file";
+import { mkdir, writeAtomic } from "@yijuchengpian/file";
 import { join } from "node:path";
 import { workspace, renderProject } from "../src/maker";
 

@@ -27,7 +27,7 @@ async function execute(args: string[], cwd?: string) {
 }
 
 async function windowsVoice(request: object) {
-  const temp = await mkdtemp(join(tmpdir(), "yingyaVoice-"));
+  const temp = await mkdtemp(join(tmpdir(), "yijuchengpianVoice-"));
   try {
     const file = join(temp, "request.json");
     await writeFile(file, JSON.stringify(request));

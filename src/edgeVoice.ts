@@ -3,9 +3,9 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 
 export type Boundary = { text: string; start: number; end: number };
-const python = () => process.env.YINGYA_VOICE_PYTHON || resolve(import.meta.dir, "../local/voice-env", process.platform === "win32" ? "Scripts/python.exe" : "bin/python");
+const python = () => process.env.YIJUCHENGPIAN_VOICE_PYTHON || resolve(import.meta.dir, "../local/voice-env", process.platform === "win32" ? "Scripts/python.exe" : "bin/python");
 async function request(payload: object) {
-  const temp = await mkdtemp(join(tmpdir(), "yingyaEdge-"));
+  const temp = await mkdtemp(join(tmpdir(), "yijuchengpianEdge-"));
   try {
     const file = join(temp, "request.json");
     await writeFile(file, JSON.stringify(payload));

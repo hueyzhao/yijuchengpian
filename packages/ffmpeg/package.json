@@ -1,5 +1,5 @@
 {
-  "name": "@yingya/ffmpeg",
+  "name": "@yijuchengpian/ffmpeg",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,7 +7,7 @@
     ".": "./src/runtime.ts"
   },
   "dependencies": {
-    "@yingya/file": "workspace:*",
+    "@yijuchengpian/file": "workspace:*",
     "@renmu/fluent-ffmpeg": "2.3.3"
   }
 }

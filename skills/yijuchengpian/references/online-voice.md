@@ -4,7 +4,7 @@
 
 ## 安装（由工作台执行）
 
-在映芽工具安装目录执行 `bun scripts/setupVoice.ts`。它需要已有 Python 3，只把轻量客户端装到项目 local/voice-env，不下载语音大模型。找不到 Python 时由工作台协助安装，不能声称已安装成功。也可用 YINGYA_SETUP_PYTHON 指定已有解释器；特殊环境用 YINGYA_VOICE_PYTHON 指定装有 edge-tts 的 Python。
+在一句成片工具安装目录执行 `bun scripts/setupVoice.ts`。它需要已有 Python 3，只把轻量客户端装到项目 local/voice-env，不下载语音大模型。找不到 Python 时由工作台协助安装，不能声称已安装成功。也可用 YIJUCHENGPIAN_SETUP_PYTHON 指定已有解释器；特殊环境用 YIJUCHENGPIAN_VOICE_PYTHON 指定装有 edge-tts 的 Python。
 
 执行 doctor，onlineVoiceover.installed=true 仅表示本地依赖就绪，不证明联网成功。第一次先用用户已同意发送的一小段旁白试音。
 

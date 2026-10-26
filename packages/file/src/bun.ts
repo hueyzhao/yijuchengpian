@@ -35,7 +35,7 @@ function wrapFile(value: Bun.BunFile, path?: PathLike): ManagedFile {
   }
   Object.defineProperty(value, "write", { value: (...args: any[]) => Reflect.apply(write, undefined, [value, ...args]) });
   // 同步 FileSink 无法等待异步队列；流写统一使用 createWriteStream。
-  Object.defineProperty(value, "writer", { value: () => { throw new TypeError("请使用 @yingya/file 的 createWriteStream 进行流式写入"); } });
+  Object.defineProperty(value, "writer", { value: () => { throw new TypeError("请使用 @yijuchengpian/file 的 createWriteStream 进行流式写入"); } });
   const stream = value.stream.bind(value);
   Object.defineProperty(value, "stream", { value: () => {
     let reader: { read(): Promise<{ done: boolean; value?: Uint8Array }>; cancel(reason?: unknown): Promise<void> } | undefined;
@@ -76,7 +76,7 @@ export function file(path: string | URL | ArrayBufferLike | Uint8Array<ArrayBuff
 export async function write(destination: string | URL | ArrayBufferLike | NodeJS.TypedArray | ManagedFile, content: FileContent, options?: WriteOptions): Promise<number> {
   // ACT: Bun 1.3.14 在部分错误输入流上不会结束 Promise；流写用标准 pipeline/createWriteStream。
   if (content instanceof Response || content instanceof Request || content instanceof ReadableStream) {
-    throw new TypeError("流式写入请使用 @yingya/file 的 createWriteStream 和 pipeline");
+    throw new TypeError("流式写入请使用 @yijuchengpian/file 的 createWriteStream 和 pipeline");
   }
   // 固定数组成员，确保排队后写入的文件与本次收集的锁路径一致。
   if (Array.isArray(content)) content = [...content];

@@ -1,7 +1,7 @@
 // Run by the host only after the user opts into online narration.
 import { resolve } from "node:path";
 const root = resolve(import.meta.dir, "..");
-const python = process.env.YINGYA_SETUP_PYTHON || Bun.which("python3") || Bun.which("python");
+const python = process.env.YIJUCHENGPIAN_SETUP_PYTHON || Bun.which("python3") || Bun.which("python");
 if (!python) throw new Error("需要 Python 3。请由工作台协助安装后重试；基础离线制作仍可使用。");
 async function run(args: string[]) {
   const proc = Bun.spawn(args, { cwd: root, stdout: "inherit", stderr: "inherit", timeout: 180000, killSignal: "SIGKILL" });
